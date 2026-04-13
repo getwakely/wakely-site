@@ -1,0 +1,72 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
+export default function Feedback() {
+  const [form, setForm] = useState({ name: '', email: '', feedback: '' })
+  const [status, setStatus] = useState('idle')
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus('loading')
+    try {
+      const res = await fetch('https://ecduxhxhtsjtgeixhems.supabase.co/functions/v1/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) setStatus('success')
+      else setStatus('error')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div className="pt-24 pb-16 min-h-screen flex items-center justify-center px-6">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center max-w-md">
+          <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
+            <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+          </div>
+          <h1 className="text-3xl font-display font-semibold text-wakely-dark mb-3">Thank You!</h1>
+          <p className="text-wakely-dark/55 mb-8">Your feedback has been sent and is very important to us. We review every submission to help make Wakely better.</p>
+          <Link to="/" className="text-wakely-blue hover:text-wakely-blue-dark font-medium transition-colors">Back to Home</Link>
+        </motion.div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="pt-24 pb-16 min-h-screen">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-lg mx-auto px-6"
+      >
+        <Link to="/" className="text-wakely-blue hover:text-wakely-blue-dark text-sm font-medium mb-8 inline-flex items-center gap-1 transition-colors">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+          Back to Home
+        </Link>
+
+        <h1 className="text-4xl font-display font-semibold text-wakely-dark tracking-tight mt-6 mb-2">Send Us Your Feedback</h1>
+        <p className="text-wakely-dark/50 mb-8">We'd love to hear your thoughts about Wakely. Your feedback helps us improve.</p>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input type="text" placeholder="Name (optional)" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-wakely-dark placeholder:text-wakely-dark/30 focus:outline-none focus:ring-2 focus:ring-wakely-blue/30 focus:border-wakely-blue transition-all" />
+          <input type="email" required placeholder="Email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-wakely-dark placeholder:text-wakely-dark/30 focus:outline-none focus:ring-2 focus:ring-wakely-blue/30 focus:border-wakely-blue transition-all" />
+          <textarea required placeholder="Your feedback" rows={6} value={form.feedback} onChange={e => setForm({ ...form, feedback: e.target.value })}
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-wakely-dark placeholder:text-wakely-dark/30 focus:outline-none focus:ring-2 focus:ring-wakely-blue/30 focus:border-wakely-blue transition-all resize-none" />
+          {status === 'error' && <p className="text-red-500 text-sm">Something went wrong. Please try again.</p>}
+          <button type="submit" disabled={status === 'loading'}
+            className="w-full bg-wakely-dark hover:bg-wakely-dark/90 disabled:opacity-60 text-white font-semibold py-3.5 rounded-full transition-all">
+            {status === 'loading' ? 'Sending...' : 'Send Feedback'}
+          </button>
+        </form>
+      </motion.div>
+    </div>
+  )
+}

@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --color-wakely-blue: #38bdf8;
+  --color-wakely-blue-dark: #0ea5e9;
+  --color-wakely-offwhite: #faf9f6;
+  --color-wakely-dark: #111111;
+  --color-wakely-gray: #6b7280;
+  --color-wakely-light-gray: #9ca3af;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: #111111;
+  background-color: #faf9f6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+::selection {
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #111111;
+}

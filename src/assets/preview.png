@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/Source File_Wakely-01.png" />
+
+    <!-- Viewport and Compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://getwakely.com/">
+
+    <!-- Primary Meta Tags -->
+    <title>Wakely — Your Smart Morning Companion</title>
+    <meta name="title" content="Wakely — Your Smart Morning Companion">
+    <meta name="description" content="Wake up to a personalized AI-generated morning briefing — news, weather, and insights that matter to you.">
+
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="AI alarm app, personalized morning briefing, smart alarm, AI news briefing, AI assistant, daily news, morning motivation, Wakely app, AI wake up, personalized alarm clock">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Author -->
+    <meta name="author" content="Wakely Labs">
+
+    <!-- Open Graph / Facebook / TikTok / Discord -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getwakely.com/">
+    <meta property="og:title" content="Wakely — Your Smart Morning Companion">
+    <meta property="og:description" content="Wake up to a personalized AI-generated morning briefing — news, weather, and insights that matter to you.">
+    <meta property="og:image" content="https://getwakely.com/preview.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://getwakely.com/">
+    <meta name="twitter:title" content="Wakely — Your Smart Morning Companion">
+    <meta name="twitter:description" content="Wake up to a personalized AI-generated morning briefing — news, weather, and insights that matter to you.">
+    <meta name="twitter:image" content="https://getwakely.com/preview.png">
+
+    <!-- Theme Color for Mobile -->
+    <meta name="theme-color" content="#0F172A">
+
+    <!-- Schema.org Structured Data (JSON-LD for SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Wakely",
+      "operatingSystem": "iOS",
+      "applicationCategory": "LifestyleApplication",
+      "description": "Wakely is an AI-powered alarm app that delivers personalized morning briefings with news, weather, and insights tailored to your interests.",
+      "url": "https://getwakely.com/",
+      "image": "https://getwakely.com/preview.png",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Wakely Labs"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-C9jj9-x0.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BQpAl-n2.css">
+  <script async src="https://bolt.new/badge.js?s=0e8f9173-fda9-40c1-aaa6-ba978367bce1"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
