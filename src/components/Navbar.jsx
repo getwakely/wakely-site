@@ -22,7 +22,7 @@ export default function Navbar() {
     // On home page, wait for hero animation to finish before showing
     if (isHome) {
       setVisible(false)
-      const timer = setTimeout(() => setVisible(true), 4500)
+      const timer = setTimeout(() => setVisible(true), 3300)
       return () => clearTimeout(timer)
     } else {
       setVisible(true)
