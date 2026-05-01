@@ -38,6 +38,18 @@ export default function Feedback() {
       return
     }
 
+    // Fire-and-forget email notification (don't block success state if it fails)
+    fetch('/api/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'feedback',
+        name: form.name.trim() || null,
+        email: form.email.trim().toLowerCase(),
+        message: form.feedback.trim(),
+      }),
+    }).catch((err) => console.warn('Email notification failed (data still saved):', err))
+
     setStatus('success')
   }
 

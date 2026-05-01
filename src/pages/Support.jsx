@@ -40,6 +40,20 @@ export default function Support() {
       return
     }
 
+    // Fire-and-forget email notification (don't block success state if it fails)
+    fetch('/api/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'support',
+        name: form.name.trim() || null,
+        email: form.email.trim().toLowerCase(),
+        category: form.category,
+        subject: form.subject.trim(),
+        message: form.description.trim(),
+      }),
+    }).catch((err) => console.warn('Email notification failed (ticket still saved):', err))
+
     setStatus('success')
   }
 
