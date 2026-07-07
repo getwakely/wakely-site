@@ -18,114 +18,157 @@ export default function PrivacyPolicy() {
         <h1 className="text-4xl md:text-5xl font-display font-bold text-wakely-dark tracking-tight mt-6 mb-2">
           Privacy Policy
         </h1>
-        <p className="text-wakely-light-gray text-sm mb-10">Last updated: April 2026</p>
+        <p className="text-wakely-light-gray text-sm mb-10">Last updated: July 2026</p>
 
         <div className="text-wakely-gray text-[15px] leading-relaxed space-y-8">
           <p>
             Wakely ("we", "us", or "our") is a product of K.E.N. Studio LLC, based in New Jersey, USA.
-            This Privacy Policy explains how we collect, use, and protect your information when you visit
-            https://getwakely.com, join our waitlist, or use our app.
+            This Privacy Policy explains what information the Wakely app and website (https://getwakely.com)
+            collect, how we use it, and the choices you have. Wakely is a morning alarm app that plays a
+            personalized audio briefing — news, weather, your commute, and your reminders — when you wake up.
+            To do that, the app works with some of your data as described below.
+          </p>
+          <p>
+            You use Wakely through an account that is created automatically and identified by an anonymous
+            account ID. We do not require your email address to use the app.
           </p>
 
           <section>
             <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">1. What we collect</h2>
+
             <p className="mb-3"><strong className="text-wakely-dark">Information you provide:</strong></p>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Name and email address when you join the waitlist or request beta access</li>
-              <li>Selected interests and preferences (to personalize future briefings)</li>
-              <li>Any messages or feedback you send us directly</li>
+              <li>Your first name (used to greet you and personalize your briefing)</li>
+              <li>The topics and interests you choose, and your briefing and voice preferences</li>
+              <li>Commute details you enter, including your start and destination addresses / saved locations</li>
+              <li>Reminders you type in to be read back to you in your briefing</li>
+              <li>Any feedback or support messages you send us</li>
+              <li>Your email address only if you choose to join our waitlist or mailing list on the website</li>
             </ul>
-            <p className="mt-3 mb-3"><strong className="text-wakely-dark">Information collected automatically:</strong></p>
+
+            <p className="mt-4 mb-3"><strong className="text-wakely-dark">Information the app uses to deliver its features:</strong></p>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Basic technical details such as IP address, browser type, and device info</li>
-              <li>Anonymous analytics data (e.g., page views, referral links, time on site)</li>
+              <li><strong className="text-wakely-dark">Precise location</strong> — with your permission, to provide local weather and to estimate your commute and traffic. You can turn this off in your device settings.</li>
+              <li><strong className="text-wakely-dark">Calendar events</strong> — if you enable it, we read your upcoming event titles so they can be mentioned in your briefing.</li>
+              <li><strong className="text-wakely-dark">Motion &amp; step activity</strong> — if you choose a step-based wake-up activity, we read your device's motion/step data. This is used only on your device to check whether you've completed the activity; it is not sent to our servers.</li>
+              <li><strong className="text-wakely-dark">Anonymous account identifier</strong> — a randomly generated ID used to save your settings and briefings.</li>
             </ul>
-            <p className="mt-3">We don't collect sensitive data, financial info, or location tracking at this stage.</p>
+
+            <p className="mt-4 mb-3"><strong className="text-wakely-dark">Information generated for you:</strong></p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Your generated briefings and the audio narration of them (created from the personalized content above)</li>
+            </ul>
+
+            <p className="mt-4 mb-3"><strong className="text-wakely-dark">Information collected automatically:</strong></p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Basic technical and device information needed to run the service</li>
+              <li>Your subscription status (whether you have an active Wakely subscription)</li>
+              <li>Anonymous usage and diagnostic information</li>
+            </ul>
+
+            <p className="mt-4 font-medium text-wakely-dark">We do not sell or rent your personal data, and we do not use it for third-party advertising or cross-app tracking.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">2. How we use your information</h2>
             <p className="mb-3">We use your information to:</p>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Manage our waitlist and notify you of updates, beta access, or launch events</li>
-              <li>Personalize content and improve the Wakely experience</li>
-              <li>Communicate with you about the product</li>
-              <li>Maintain the security and performance of our systems</li>
+              <li>Create and play your personalized morning briefing and run your alarms</li>
+              <li>Provide local weather, commute, and traffic details in your briefing</li>
+              <li>Read your chosen calendar events and typed reminders back to you</li>
+              <li>Save your settings, interests, and past briefings across sessions</li>
+              <li>Manage your subscription and, on the website, our waitlist and email updates</li>
+              <li>Maintain the security, reliability, and performance of the service</li>
               <li>Comply with legal and regulatory requirements</li>
             </ul>
-            <p className="mt-3 font-medium text-wakely-dark">We do not sell or rent your personal data.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">3. Where and how your data is stored</h2>
+            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">3. Location, calendar, and motion permissions</h2>
             <p>
-              Your information is securely stored using Supabase, our managed backend provider, which includes
-              encryption and access controls. Email addresses are also stored in Kit (formerly ConvertKit),
-              which we use for email communications.
+              Wakely only accesses your location, calendar, and motion data after you grant permission, and only
+              to provide the features described above. You can review or revoke any of these permissions at any
+              time in your device's Settings. Your motion and step data is processed on your device and is not
+              transmitted to or stored by us. Turning a permission off may disable the related feature (for
+              example, weather or commute details) but will not otherwise prevent you from using the app.
             </p>
-            <p className="mt-3">We take reasonable steps to keep your data secure, but we cannot guarantee absolute security.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">4. Your choices</h2>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>You can unsubscribe from our emails at any time using the link at the bottom of any message.</li>
-              <li>To access, update, or delete your data, email us at <a href="mailto:wakelydev@getwakely.com" className="text-wakely-blue hover:underline">wakelydev@getwakely.com</a>.</li>
-              <li>Within the Wakely app, you can also manage or delete your account directly.</li>
-            </ul>
+            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">4. Where and how your data is stored</h2>
+            <p>
+              Your account data is stored using Supabase, our managed backend provider, with encryption in
+              transit and access controls. To generate your briefing, the relevant content (such as your
+              selected topics, location-derived weather, chosen calendar titles, and reminders) is sent to the
+              service providers listed below strictly to produce your briefing text and audio. We take
+              reasonable steps to protect your data but cannot guarantee absolute security.
+            </p>
           </section>
 
           <section>
             <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">5. Third-party services we use</h2>
-            <p className="mb-3">We rely on trusted third-party platforms to operate our product, including:</p>
+            <p className="mb-3">We rely on trusted third-party platforms to operate Wakely, including:</p>
             <ul className="list-disc pl-5 space-y-1">
-              <li><strong className="text-wakely-dark">Supabase</strong> — user database and API hosting</li>
-              <li><strong className="text-wakely-dark">Kit (formerly ConvertKit)</strong> — email and waitlist management</li>
-              <li><strong className="text-wakely-dark">Google Gemini</strong> — AI and content generation services</li>
-              <li><strong className="text-wakely-dark">Speechify</strong> — text-to-speech audio generation</li>
-              <li><strong className="text-wakely-dark">NewsAPI.ai</strong> — news aggregation and content sourcing</li>
-              <li><strong className="text-wakely-dark">(Future) Apple</strong> — for in-app purchases and subscription management</li>
+              <li><strong className="text-wakely-dark">Supabase</strong> — account database, authentication, and backend hosting</li>
+              <li><strong className="text-wakely-dark">Google Gemini</strong> — AI generation of your briefing text</li>
+              <li><strong className="text-wakely-dark">Speechify</strong> — text-to-speech narration of your briefing</li>
+              <li><strong className="text-wakely-dark">NewsAPI.ai</strong> — news sourcing for your selected topics</li>
+              <li><strong className="text-wakely-dark">Apple</strong> — WeatherKit for weather, Maps for commute estimates, and the App Store for in-app purchases and subscriptions</li>
+              <li><strong className="text-wakely-dark">Kit (formerly ConvertKit)</strong> — website waitlist and email communications</li>
             </ul>
-            <p className="mt-3">Each service has its own privacy practices, which you can review on their respective websites.</p>
+            <p className="mt-3">Each service has its own privacy practices, which you can review on their respective websites. We share only what is needed for each service to perform its function.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">6. Data retention</h2>
+            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">6. Your choices and rights</h2>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong className="text-wakely-dark">Delete your account and data:</strong> You can permanently delete your account and associated data from within the Wakely app (Settings → Delete Account). You may also email us to request deletion.</li>
+              <li>Review or revoke location, calendar, and motion permissions any time in your device Settings.</li>
+              <li>Manage or cancel your subscription in your Apple ID / App Store settings.</li>
+              <li>If you joined our waitlist, unsubscribe using the link at the bottom of any email.</li>
+              <li>To access, correct, or delete your data, email us at <a href="mailto:wakelydev@getwakely.com" className="text-wakely-blue hover:underline">wakelydev@getwakely.com</a>.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">7. Data retention</h2>
             <p>
-              We retain waitlist and email data for up to two years or until you request deletion.
-              Anonymized analytics data may be stored longer for internal insights.
+              We retain your account data for as long as your account is active. When you delete your account,
+              we delete your associated personal data from our systems. Waitlist and email data is retained for
+              up to two years or until you request deletion. Anonymized or aggregated data that no longer
+              identifies you may be retained for internal insights.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">7. Children's privacy</h2>
+            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">8. Children's privacy</h2>
             <p>
-              Wakely requires users to be 13 years of age or older to create an account or use the app.
-              We do not knowingly collect personal information from children under 13. If we become aware
-              that a user is under 13, we will promptly delete their information.
+              Wakely requires users to be 13 years of age or older. We do not knowingly collect personal
+              information from children under 13. If we become aware that a user is under 13, we will promptly
+              delete their information.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">8. Your rights (GDPR & CCPA)</h2>
+            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">9. Your rights (GDPR &amp; CCPA)</h2>
             <p>
               If you are located in the European Union or California, you have additional rights regarding your
               personal data, including the right to access, correct, delete, or port your data, and the right to
-              know what information we have collected about you. To exercise any of these rights, contact us
-              at <a href="mailto:wakelydev@getwakely.com" className="text-wakely-blue hover:underline">wakelydev@getwakely.com</a>.
+              know what information we have collected about you. We do not sell your personal information. To
+              exercise any of these rights, contact us at <a href="mailto:wakelydev@getwakely.com" className="text-wakely-blue hover:underline">wakelydev@getwakely.com</a>.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">9. Changes to this policy</h2>
+            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">10. Changes to this policy</h2>
             <p>
-              We may update this policy as our product evolves. If significant changes occur, we'll update
-              this page and notify you by email.
+              We may update this policy as our product evolves. If significant changes occur, we'll update this
+              page and, where appropriate, notify you.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">10. Contact</h2>
+            <h2 className="text-xl font-display font-bold text-wakely-dark mb-3">11. Contact</h2>
             <p>
               Questions about privacy?{' '}
               <a href="mailto:wakelydev@getwakely.com" className="text-wakely-blue hover:underline">wakelydev@getwakely.com</a>
