@@ -4,17 +4,9 @@ import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ScrollReveal'
 import { getWaitlistCount } from '../lib/supabase'
 
-{/* PLACEHOLDER — replace with real testimonials */}
-const testimonials = [
-  { name: 'Sarah K.', role: 'Product Manager', stars: 5, quote: 'Finally, a way to start my morning without getting sucked into endless feeds. Wakely gives me exactly what I need in five minutes.' },
-  { name: 'Marcus T.', role: 'Startup Founder', stars: 5, quote: "I love that it's ready before my alarm goes off. Game changer for my morning routine." },
-  { name: 'Priya R.', role: 'Grad Student', stars: 4, quote: 'I used to dread opening Twitter first thing. Now I just open Wakely and feel actually informed.' },
-  { name: 'James L.', role: 'Designer', stars: 5, quote: "Clean, calm, and useful. It's like someone made a morning news app for people who care about their mental health." },
-  { name: 'Olivia M.', role: 'Marketing Director', stars: 5, quote: "The personalization is surprisingly good. After a week, it felt like it really understood what I care about." },
-  { name: 'David C.', role: 'Engineer', stars: 4, quote: "Simple and focused. No clickbait, no rage bait — just the stories that matter." },
-  { name: 'Aisha B.', role: 'Freelancer', stars: 5, quote: "I've tried every news app out there. Wakely is the first one that doesn't make me anxious." },
-  { name: 'Ryan W.', role: 'Teacher', stars: 5, quote: "My students ask how I always know what's going on. I just tell them I have a good morning routine." },
-]
+// Real user reviews will be added here after launch — with documented consent.
+// No fabricated testimonials (FTC 16 CFR Part 255).
+const testimonials = []
 
 function Stars({ count }) {
   return (
@@ -50,10 +42,10 @@ export default function SocialProof() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-6xl font-display font-bold text-wakely-dark tracking-tight">
-            What People Are Saying
+            Built for better mornings
           </h1>
           <p className="mt-4 text-lg text-wakely-gray">
-            Early testers are already loving their mornings more.
+            Wakely is launching soon — real reviews from real users will live here.
           </p>
         </motion.div>
       </section>
@@ -75,7 +67,8 @@ export default function SocialProof() {
         </ScrollReveal>
       </section>
 
-      {/* Testimonial grid */}
+      {/* Testimonial grid — renders only once we have real, consented reviews */}
+      {testimonials.length > 0 && (
       <section className="px-6 max-w-5xl mx-auto mb-20">
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
           {testimonials.map((t, i) => (
@@ -99,6 +92,7 @@ export default function SocialProof() {
           ))}
         </div>
       </section>
+      )}
 
       {/* CTA */}
       <section className="px-6 text-center py-16 bg-white">
