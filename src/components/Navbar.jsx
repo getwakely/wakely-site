@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom'
 
 import logoImg from '../assets/logo.png'
 
+const APP_STORE_URL = 'https://apps.apple.com/app/id6755365728'
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -85,12 +87,14 @@ export default function Navbar() {
 
         {/* Desktop CTA — right */}
         <div className="hidden md:flex items-center gap-3">
-          <Link
-            to="/waitlist"
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-wakely-blue text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all hover:bg-wakely-blue-dark hover:-translate-y-px hover:shadow-md hover:shadow-wakely-blue/20"
           >
-            Join Waitlist
-          </Link>
+            Download
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -121,12 +125,14 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            to="/waitlist"
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-wakely-blue text-white text-sm font-semibold px-5 py-3 rounded-full text-center transition-colors hover:bg-wakely-blue-dark mt-1"
           >
-            Join Waitlist
-          </Link>
+            Download
+          </a>
         </div>
       )}
     </nav>

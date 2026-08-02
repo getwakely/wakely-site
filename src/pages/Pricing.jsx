@@ -2,44 +2,21 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ScrollReveal'
 
-{/* PLACEHOLDER — all pricing is placeholder, final numbers TBD */}
-const tiers = [
-  {
-    name: 'Free',
-    price: '$0',
-    period: '/month',
-    desc: 'Get started with your morning briefing.',
-    features: [
-      'Daily morning briefing',
-      'Top 5 stories',
-      'Basic personalization',
-      'Email delivery',
-    ],
-    cta: 'Get Started',
-    featured: false,
-  },
-  {
-    name: 'Pro',
-    price: '$5', /* PLACEHOLDER */
-    period: '/month',
-    desc: 'The full Wakely experience, tailored to you.',
-    features: [
-      'Everything in Free',
-      'Fully personalized feed',
-      'Unlimited sources',
-      'Audio briefings',
-      'Priority early access',
-      'Ad-free experience',
-    ],
-    cta: 'Join Waitlist',
-    featured: true,
-  },
+const APP_STORE_URL = 'https://apps.apple.com/app/id6755365728'
+
+const premiumPerks = [
+  'Fully personalized morning briefing',
+  'Unlimited categories & interests',
+  'Wake-up call that reads your briefing aloud',
+  'Multiple voices & adjustable reading speed',
+  'Weather, commute, calendar & more',
+  'Ad-free experience',
 ]
 
 export default function Pricing() {
   return (
     <div className="pt-24 pb-16">
-      <section className="px-6 text-center max-w-3xl mx-auto mb-16">
+      <section className="px-6 text-center max-w-3xl mx-auto mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,64 +26,46 @@ export default function Pricing() {
             Simple, honest pricing
           </h1>
           <p className="mt-4 text-lg text-wakely-dark/55">
-            Start free. Upgrade when you're ready.
+            Start with a free trial, then subscribe weekly, monthly, or yearly.
+            Current pricing is always shown in the App Store.
           </p>
         </motion.div>
       </section>
 
-      <section className="px-6 max-w-3xl mx-auto mb-20">
-        <div className="grid md:grid-cols-2 gap-6">
-          {tiers.map((tier, i) => (
-            <ScrollReveal key={i} delay={i * 0.12}>
-              <div
-                className={`rounded-2xl p-8 h-full flex flex-col ${
-                  tier.featured
-                    ? 'bg-wakely-dark text-white ring-2 ring-wakely-blue shadow-xl'
-                    : 'bg-white border border-gray-200'
-                }`}
-              >
-                <h3 className={`text-lg font-semibold font-display ${tier.featured ? 'text-white' : 'text-wakely-dark'}`}>
-                  {tier.name}
-                </h3>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className={`text-4xl font-bold font-display ${tier.featured ? 'text-white' : 'text-wakely-dark'}`}>
-                    {tier.price}
-                  </span>
-                  <span className={`text-sm ${tier.featured ? 'text-white/50' : 'text-wakely-dark/40'}`}>
-                    {tier.period}
-                  </span>
-                </div>
-                <p className={`mt-2 text-sm ${tier.featured ? 'text-white/60' : 'text-wakely-dark/50'}`}>
-                  {tier.desc}
-                </p>
+      <section className="px-6 max-w-md mx-auto mb-16">
+        <ScrollReveal>
+          <div className="rounded-2xl p-8 bg-wakely-dark text-white ring-2 ring-wakely-blue shadow-xl">
+            <h3 className="text-lg font-semibold font-display text-white text-center">
+              Wakely Premium
+            </h3>
+            <p className="mt-2 text-sm text-white/60 text-center">
+              A free trial to start, then choose the plan that fits you.
+            </p>
 
-                <ul className="mt-6 space-y-3 flex-1">
-                  {tier.features.map((feature, j) => (
-                    <li key={j} className="flex items-start gap-2.5 text-sm">
-                      <svg className={`w-4 h-4 mt-0.5 shrink-0 ${tier.featured ? 'text-wakely-blue' : 'text-wakely-blue'}`} fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className={tier.featured ? 'text-white/80' : 'text-wakely-dark/65'}>
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+            <ul className="mt-6 space-y-3">
+              {premiumPerks.map((perk, j) => (
+                <li key={j} className="flex items-start gap-2.5 text-sm">
+                  <svg className="w-4 h-4 mt-0.5 shrink-0 text-wakely-blue" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-white/80">{perk}</span>
+                </li>
+              ))}
+            </ul>
 
-                <Link
-                  to="/waitlist"
-                  className={`mt-8 block text-center font-semibold py-3 rounded-full transition-colors ${
-                    tier.featured
-                      ? 'bg-wakely-blue hover:bg-wakely-blue-dark text-white'
-                      : 'bg-wakely-dark/5 hover:bg-wakely-dark/10 text-wakely-dark'
-                  }`}
-                >
-                  {tier.cta}
-                </Link>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 block text-center font-semibold py-3 rounded-full transition-colors bg-wakely-blue hover:bg-wakely-blue-dark text-white"
+            >
+              See pricing on the App Store
+            </a>
+            <p className="mt-4 text-xs text-white/40 text-center">
+              Manage or cancel anytime in your App Store subscriptions.
+            </p>
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* FAQ link */}

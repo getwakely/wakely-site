@@ -3,17 +3,12 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ScrollReveal'
 import HeroAnimation from '../components/HeroAnimation'
-import { getWaitlistCount } from '../lib/supabase'
-
 import logoImg from '../assets/logo.png'
 
-export default function Home() {
-  const [waitlistCount, setWaitlistCount] = useState(0)
-  const [activeFeature, setActiveFeature] = useState(0)
+const APP_STORE_URL = 'https://apps.apple.com/app/id6755365728'
 
-  useEffect(() => {
-    getWaitlistCount().then(setWaitlistCount)
-  }, [])
+export default function Home() {
+  const [activeFeature, setActiveFeature] = useState(0)
 
   // Auto-cycle features
   useEffect(() => {
@@ -111,7 +106,7 @@ export default function Home() {
                 }}
                 transition={{ duration: 0.6, delay: 0.7, ease: 'easeOut' }}
               >
-                {/* Social proof pill */}
+                {/* Availability pill */}
                 <div className="inline-flex items-center gap-2 bg-white/80 border border-wakely-blue/20 rounded-full px-4 py-2">
                   <div className="flex -space-x-2">
                     <div className="w-6 h-6 rounded-full bg-sky-200 border-2 border-white" />
@@ -119,19 +114,19 @@ export default function Home() {
                     <div className="w-6 h-6 rounded-full bg-emerald-200 border-2 border-white" />
                   </div>
                   <span className="text-sm text-wakely-dark font-medium">
-                    {waitlistCount > 0
-                      ? `${waitlistCount.toLocaleString()} on the waitlist`
-                      : 'Join the waitlist'}
+                    Now available on iPhone
                   </span>
                 </div>
 
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                  <Link
-                    to="/waitlist"
+                  <a
+                    href={APP_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center bg-wakely-blue text-white font-semibold text-base px-7 py-3.5 rounded-full transition-all hover:bg-wakely-blue-dark hover:-translate-y-px hover:shadow-lg hover:shadow-wakely-blue/20"
                   >
-                    Join the Waitlist
-                  </Link>
+                    Download on the App Store
+                  </a>
                   <Link
                     to="/features"
                     className="inline-flex items-center text-wakely-blue font-medium text-sm hover:text-wakely-blue-dark transition-colors"
@@ -255,14 +250,16 @@ export default function Home() {
               <span className="text-wakely-blue">informed?</span>
             </h2>
             <p className="mt-5 text-lg text-wakely-gray max-w-md mx-auto">
-              Beta is almost here. Be the first to experience Wakely.
+              Wakely is available now on the App Store. Wake up informed tomorrow.
             </p>
-            <Link
-              to="/waitlist"
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-10 inline-flex items-center bg-wakely-blue text-white font-semibold text-lg px-10 py-4 rounded-full transition-all hover:bg-wakely-blue-dark hover:-translate-y-px hover:shadow-lg hover:shadow-wakely-blue/20"
             >
-              Join the Waitlist
-            </Link>
+              Download on the App Store
+            </a>
           </div>
         </ScrollReveal>
       </section>

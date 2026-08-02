@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ScrollReveal'
 
+const APP_STORE_URL = 'https://apps.apple.com/app/id6755365728'
+
 const steps = [
   {
     num: '01',
@@ -128,14 +130,16 @@ export default function Features() {
             Ready to try it?
           </h2>
           <p className="mt-3 text-wakely-gray mb-8">
-            Join the waitlist and be first in line.
+            Download Wakely and wake up informed tomorrow.
           </p>
-          <Link
-            to="/waitlist"
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center bg-wakely-blue text-white font-semibold px-8 py-4 rounded-full transition-all hover:bg-wakely-blue-dark hover:-translate-y-px hover:shadow-lg hover:shadow-wakely-blue/20"
           >
-            Join the Waitlist
-          </Link>
+            Download on the App Store
+          </a>
         </ScrollReveal>
       </section>
     </div>

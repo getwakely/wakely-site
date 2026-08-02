@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ScrollReveal'
-import { getWaitlistCount } from '../lib/supabase'
+
+const APP_STORE_URL = 'https://apps.apple.com/app/id6755365728'
 
 // Real user reviews will be added here after launch — with documented consent.
 // No fabricated testimonials (FTC 16 CFR Part 255).
@@ -26,12 +25,6 @@ function Stars({ count }) {
 }
 
 export default function SocialProof() {
-  const [waitlistCount, setWaitlistCount] = useState(0)
-
-  useEffect(() => {
-    getWaitlistCount().then(setWaitlistCount)
-  }, [])
-
   return (
     <div className="pt-24 pb-16">
       {/* Header */}
@@ -45,25 +38,22 @@ export default function SocialProof() {
             Built for better mornings
           </h1>
           <p className="mt-4 text-lg text-wakely-gray">
-            Wakely is launching soon — real reviews from real users will live here.
+            Wakely is live on the App Store — real reviews from real users will appear here soon.
           </p>
         </motion.div>
       </section>
 
-      {/* Waitlist banner */}
-      <section className="px-6 max-w-2xl mx-auto mb-16">
+      {/* Download banner */}
+      <section className="px-6 max-w-2xl mx-auto mb-16 text-center">
         <ScrollReveal>
-          <div className="bg-white rounded-2xl py-6 text-center border border-gray-200">
-            {waitlistCount > 0 ? (
-              <p className="text-2xl font-display font-bold text-wakely-dark">
-                <span className="text-wakely-blue">{waitlistCount.toLocaleString()}</span> people already on the waitlist
-              </p>
-            ) : (
-              <p className="text-xl font-display font-bold text-wakely-gray">
-                Join the growing waitlist
-              </p>
-            )}
-          </div>
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center bg-wakely-blue text-white font-semibold px-8 py-4 rounded-full transition-all hover:bg-wakely-blue-dark hover:-translate-y-px hover:shadow-lg hover:shadow-wakely-blue/20"
+          >
+            Download on the App Store
+          </a>
         </ScrollReveal>
       </section>
 
@@ -98,17 +88,19 @@ export default function SocialProof() {
       <section className="px-6 text-center py-16 bg-white">
         <ScrollReveal>
           <h2 className="text-2xl md:text-4xl font-display font-bold text-wakely-dark">
-            Be next.
+            Ready to wake up informed?
           </h2>
           <p className="mt-3 text-wakely-gray mb-8">
-            Join the waitlist and start your mornings right.
+            Download Wakely and start your mornings right.
           </p>
-          <Link
-            to="/waitlist"
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center bg-wakely-blue text-white font-semibold px-8 py-4 rounded-full transition-all hover:bg-wakely-blue-dark hover:-translate-y-px hover:shadow-lg hover:shadow-wakely-blue/20"
           >
-            Join the Waitlist
-          </Link>
+            Download on the App Store
+          </a>
         </ScrollReveal>
       </section>
     </div>

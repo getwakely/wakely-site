@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from '../components/ScrollReveal'
 
+const APP_STORE_URL = 'https://apps.apple.com/app/id6755365728'
+
 const faqCategories = [
   {
     name: 'Product Basics',
@@ -63,15 +65,15 @@ const faqCategories = [
       },
       {
         q: 'Is Wakely free?',
-        a: 'Wakely will launch as a paid app with core features included. A premium version unlocks unlimited categories and interests, additional voices and narration styles, expanded personalization features, and other advanced features added over time.',
+        a: 'Wakely is a paid app with core features included. A premium version unlocks unlimited categories and interests, additional voices and narration styles, expanded personalization features, and other advanced features added over time.',
       },
       {
-        q: 'When will Wakely launch?',
-        a: 'We\'re currently finishing development and preparing our first public release. Join the waitlist to be among the first people to try Wakely.',
+        q: 'Is Wakely available now?',
+        a: 'Yes — Wakely is available now on the App Store for iPhone. Download it, set your interests and wake time, and your first personalized briefing can be ready tomorrow morning.',
       },
       {
         q: 'Is Wakely available on iPhone or Android?',
-        a: 'Wakely is launching first on iPhone, with potential support for other platforms in the future.',
+        a: 'Wakely is available on iPhone, with potential support for other platforms in the future.',
       },
     ],
   },
@@ -79,8 +81,8 @@ const faqCategories = [
     name: 'Billing & Access',
     faqs: [
       {
-        q: 'How do I get early access?',
-        a: 'You can join the Wakely waitlist on our website to receive updates, early access opportunities, and beta invitations.',
+        q: 'How do I get Wakely?',
+        a: 'Download Wakely from the App Store on your iPhone, set your interests and wake time, and your personalized briefing will be ready when you wake up.',
       },
     ],
   },
@@ -220,15 +222,17 @@ export default function FAQ() {
             Still have questions?
           </h2>
           <p className="mt-3 text-wakely-gray mb-6">
-            Reach out to our team or join the waitlist.
+            Reach out to our team, or download Wakely and try it yourself.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              to="/waitlist"
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center bg-wakely-blue text-white font-semibold px-8 py-3.5 rounded-full transition-all hover:bg-wakely-blue-dark hover:-translate-y-px hover:shadow-lg hover:shadow-wakely-blue/20"
             >
-              Join the Waitlist
-            </Link>
+              Download on the App Store
+            </a>
             <Link
               to="/support"
               className="inline-flex items-center bg-white border border-gray-200 text-wakely-dark font-semibold px-8 py-3.5 rounded-full transition-all hover:bg-gray-50"
